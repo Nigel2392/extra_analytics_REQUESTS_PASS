@@ -99,4 +99,6 @@ class UserAnalyticsMeta(models.Model):
     def save(self, *args, **kwargs):
         request = kwargs.get('request', None)
         print(request)
+        kwargs.pop('request')
+        super(UserAnalyticsMeta, self).save(*args, **kwargs)
 
